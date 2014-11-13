@@ -7,23 +7,22 @@
 //
 
 #include "ContextFreeGrammar.h"
-using namespace std;
 
-void ContextFreeGrammar::addTerminalStr(const string &newTerminalStr){
+void ContextFreeGrammar::addTerminalStr(const std::string &newTerminalStr){
     terminalStr.insert(newTerminalStr);
 }
 
-void ContextFreeGrammar::addNTerminalStr(const string &newNTerminaStr){
+void ContextFreeGrammar::addNTerminalStr(const std::string &newNTerminaStr){
     nterminalStr.insert(newNTerminaStr);
 }
 
-void ContextFreeGrammar::addSingleProduction(const string &nTermStr,
-                                             const string &newProduction){
+void ContextFreeGrammar::addSingleProduction(const std::string &nTermStr,
+                                             const std::string &newProduction){
     production.insert({nTermStr,newProduction});
 }
 
-unordered_set<string> ContextFreeGrammar::getProductionFrStr(const string &str) const{
-    unordered_set<string> result;
+std::unordered_set<std::string> ContextFreeGrammar::getProductionFrStr(const std::string &str) const{
+    std::unordered_set<std::string> result;
     
     for (auto pos = production.equal_range(str); pos.first!=pos.second; ++pos.first) {
         result.insert(pos.first->second);
@@ -31,7 +30,7 @@ unordered_set<string> ContextFreeGrammar::getProductionFrStr(const string &str) 
     return  result;
 }
 
-bool ContextFreeGrammar::isTerminalStr(const string &tempStr){
+bool ContextFreeGrammar::isTerminalStr(const std::string &tempStr){
     if (terminalStr.find(tempStr) == terminalStr.end()) {
         return false;
     }

@@ -17,6 +17,7 @@
 class ContextFreeGrammar
 {
 public:
+    ContextFreeGrammar() = default;
     void addTerminalStr(const std::string &);
     void addNTerminalStr(const std::string &);
     void addSingleProduction(const std::string &nTermStr, const std::string &newProduction);
