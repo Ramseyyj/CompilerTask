@@ -17,11 +17,14 @@ int main()
     
     test_ContextFreeGrammar.addTerminalStr("t_hehe");
     test_ContextFreeGrammar.addTerminalStr("t_aiya");
+    
     test_ContextFreeGrammar.addNTerminalStr("nt_haha");
     test_ContextFreeGrammar.addTerminalStr("nt_woqu");
+    
     test_ContextFreeGrammar.addSingleProduction("1612", "10423");
     test_ContextFreeGrammar.addSingleProduction("1612", "10424");
     test_ContextFreeGrammar.setStartStr("is_it_start");
+    
     
     
     
