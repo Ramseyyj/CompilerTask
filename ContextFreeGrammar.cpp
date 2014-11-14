@@ -19,6 +19,11 @@ void ContextFreeGrammar::addNTerminalStr(const std::string &newNTerminaStr){
 void ContextFreeGrammar::addSingleProduction(const std::string &nTermStr,
                                              const std::string &newProduction){
     production.insert({nTermStr,newProduction});
+    
+    if (nterminalStr.find(nTermStr)==nterminalStr.end()) {
+        nterminalStr.insert(nTermStr);
+        terminalStr.erase(nTermStr);//delete if inTermStr in terminalStr
+    }
 }
 
 std::unordered_set<std::string> ContextFreeGrammar::getProductionFrStr(const std::string &str) const{
