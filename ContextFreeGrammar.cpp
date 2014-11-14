@@ -16,13 +16,18 @@ void ContextFreeGrammar::addNTerminalStr(const std::string &newNTerminaStr){
     nterminalStr.insert(newNTerminaStr);
 }
 
-void ContextFreeGrammar::addSingleProduction(const std::string &nTermStr,
-                                             const std::string &newProduction){
-    production.insert({nTermStr,newProduction});
+void ContextFreeGrammar::addSingleProduction(const std::string &prdtionLeft,
+                                             const std::string &prdtionRight){
+    production.insert({prdtionLeft,prdtionRight});
     
-    if (nterminalStr.find(nTermStr)==nterminalStr.end()) {
-        nterminalStr.insert(nTermStr);
-        terminalStr.erase(nTermStr);//delete if inTermStr in terminalStr
+    if (nterminalStr.find(prdtionLeft) == nterminalStr.end()) {
+        nterminalStr.insert(prdtionLeft);
+        terminalStr.erase(prdtionLeft);//delete if in terminalStr
+    }
+    
+    if (nterminalStr.find(prdtionRight) == nterminalStr.end()
+            && terminalStr.find(prdtionRight) == terminalStr.end()) {
+        terminalStr.insert(prdtionRight);
     }
 }
 
