@@ -31,7 +31,7 @@ public:
     std::unordered_set<std::string> getAllNTerminalStr() const;
     std::string getStartStr() const;
     
-    bool isTerminalStr(const std::string &);
+    bool isTerminalStr(const std::string &) const;
 
 private:
     std::string startStr;

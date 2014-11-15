@@ -40,7 +40,7 @@ std::unordered_set<std::string> ContextFreeGrammar::getProductionFrStr(const std
     return  result;
 }
 
-bool ContextFreeGrammar::isTerminalStr(const std::string &tempStr){
+bool ContextFreeGrammar::isTerminalStr(const std::string &tempStr) const{
     if (terminalStr.find(tempStr) == terminalStr.end()) {
         return false;
     }
