@@ -18,7 +18,7 @@ void ContextFreeGrammar::addNTerminalStr(const std::string &newNTerminaStr){
 
 void ContextFreeGrammar::addSingleProduction(const std::string &prdtionLeft,
                                              const std::string &prdtionRight){
-    production.insert({prdtionLeft,prdtionRight});
+    production.insert(make_pair(prdtionLeft,prdtionRight));
     
     if (nterminalStr.find(prdtionLeft) == nterminalStr.end()) {
         nterminalStr.insert(prdtionLeft);
