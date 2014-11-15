@@ -12,6 +12,6 @@ C++ 11
 
 #Class need to complete
 ContextFreeGrammar	100% (have been tested)  
-LL_1_Grammar 0%
+LLOneGrammar 0%
 
 
