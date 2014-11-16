@@ -186,3 +186,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# My configurations:
+*.vcxproj
+*.filters
